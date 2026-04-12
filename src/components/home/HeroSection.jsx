@@ -6,9 +6,17 @@ const LOGO_URL = "https://media.base44.com/images/public/user_68ef14c3265740cfbb
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-mystic">
-      <GoldenParticles />
-      
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Banner background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://media.base44.com/images/public/69db1a3a97e4e8f9ae073a7f/02c6ee91d_Luxuriouswellnessandbeautyshowcase.png"
+          alt="Mímate by JMW"
+          className="w-full h-full object-cover object-center"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      </div>
+
       {/* Mystic background symbols */}
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ctext x='30' y='35' text-anchor='middle' fill='%23c9a84c' font-size='20'%3E✦%3C/text%3E%3C/svg%3E")`,
