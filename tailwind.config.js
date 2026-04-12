@@ -19,11 +19,11 @@ module.exports = {
   			foreground: 'hsl(var(--foreground))',
         gold: '#c9a84c',
         mystic: {
-          900: '#0a0014',
-          800: '#1a0030',
-          700: '#3d0050',
-          600: '#5a0070',
-          500: '#8b0057',
+          900: '#010f06',
+          800: '#031a0c',
+          700: '#063d1a',
+          600: '#0a5c28',
+          500: '#0f7a35',
         },
   			card: {
   				DEFAULT: 'hsl(var(--card))',
