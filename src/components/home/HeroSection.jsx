@@ -40,7 +40,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="font-script text-4xl sm:text-5xl md:text-6xl text-gold gold-text-glow mb-4"
+          className="font-script text-5xl sm:text-6xl md:text-7xl text-gold mb-4"
+          style={{ textShadow: '0 0 20px rgba(201,168,76,0.8), 2px 2px 6px rgba(0,0,0,1), -1px -1px 0 rgba(0,0,0,1)' }}
         >
           Mímate by JMW
         </motion.h1>
@@ -49,7 +50,8 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="font-heading text-lg sm:text-xl md:text-2xl text-foreground/80 italic mb-10 max-w-lg mx-auto"
+          className="font-heading text-xl sm:text-2xl md:text-3xl font-semibold italic mb-10 max-w-xl mx-auto px-4 py-2 rounded-lg"
+          style={{ color: '#fff', textShadow: '2px 2px 8px rgba(0,0,0,1), 0 0 30px rgba(0,0,0,0.9)', background: 'rgba(0,0,0,0.25)', backdropFilter: 'blur(4px)' }}
         >
           Tu ritual de bienestar comienza aquí
         </motion.p>
