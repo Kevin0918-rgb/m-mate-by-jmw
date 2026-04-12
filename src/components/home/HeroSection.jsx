@@ -41,7 +41,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
           className="font-script text-5xl sm:text-6xl md:text-7xl text-gold mb-4"
-          style={{ textShadow: '0 0 20px rgba(201,168,76,0.8), 2px 2px 6px rgba(0,0,0,1), -1px -1px 0 rgba(0,0,0,1)' }}
+          style={{ textShadow: '0 0 20px rgba(200,192,176,0.6), 2px 2px 6px rgba(0,0,0,1), -1px -1px 0 rgba(0,0,0,1)' }}
         >
           Mímate by JMW
         </motion.h1>

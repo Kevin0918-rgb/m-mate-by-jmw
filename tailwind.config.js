@@ -17,13 +17,13 @@ module.exports = {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
-        gold: '#c9a84c',
+        gold: '#c8c0b0',
         mystic: {
-          900: '#010f06',
-          800: '#031a0c',
-          700: '#063d1a',
-          600: '#0a5c28',
-          500: '#0f7a35',
+          900: '#0a0a0a',
+          800: '#111111',
+          700: '#1a1a1a',
+          600: '#222222',
+          500: '#333333',
         },
   			card: {
   				DEFAULT: 'hsl(var(--card))',
