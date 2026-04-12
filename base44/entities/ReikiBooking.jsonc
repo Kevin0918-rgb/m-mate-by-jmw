@@ -1,0 +1,43 @@
+{
+  "name": "ReikiBooking",
+  "type": "object",
+  "properties": {
+    "client_name": {
+      "type": "string",
+      "title": "Nombre del cliente"
+    },
+    "client_email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "client_phone": {
+      "type": "string",
+      "title": "Tel\u00e9fono"
+    },
+    "preferred_date": {
+      "type": "string",
+      "format": "date",
+      "title": "Fecha preferida"
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notas o intenci\u00f3n"
+    },
+    "status": {
+      "type": "string",
+      "title": "Estado",
+      "enum": [
+        "Pendiente",
+        "Confirmada",
+        "Completada",
+        "Cancelada"
+      ],
+      "default": "Pendiente"
+    }
+  },
+  "required": [
+    "client_name",
+    "client_email",
+    "preferred_date"
+  ]
+}

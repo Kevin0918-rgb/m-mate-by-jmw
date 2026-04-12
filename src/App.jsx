@@ -5,7 +5,20 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
-// Add page imports here
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Shop from './pages/Shop';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Reiki from './pages/Reiki';
+import Contact from './pages/Contact';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminProducts from './pages/admin/AdminProducts';
+import AdminOrders from './pages/admin/AdminOrders';
+import AdminMessages from './pages/admin/AdminMessages';
+import AdminTestimonials from './pages/admin/AdminTestimonials';
+import AdminReiki from './pages/admin/AdminReiki';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -33,8 +46,23 @@ const AuthenticatedApp = () => {
   // Render the main app
   return (
     <Routes>
-      {/* Add your page Route elements here */}
-      <Route path="*" element={<PageNotFound />} />
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/tienda" element={<Shop />} />
+        <Route path="/carrito" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/reiki" element={<Reiki />} />
+        <Route path="/contacto" element={<Contact />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Route>
+      <Route element={<AdminLayout />}>
+        <Route path="/admin" element={<AdminDashboard />} />
+        <Route path="/admin/productos" element={<AdminProducts />} />
+        <Route path="/admin/ordenes" element={<AdminOrders />} />
+        <Route path="/admin/mensajes" element={<AdminMessages />} />
+        <Route path="/admin/testimonios" element={<AdminTestimonials />} />
+        <Route path="/admin/reiki" element={<AdminReiki />} />
+      </Route>
     </Routes>
   );
 };

@@ -1,0 +1,86 @@
+{
+  "name": "Order",
+  "type": "object",
+  "properties": {
+    "customer_name": {
+      "type": "string",
+      "title": "Nombre del cliente"
+    },
+    "customer_email": {
+      "type": "string",
+      "title": "Email"
+    },
+    "customer_phone": {
+      "type": "string",
+      "title": "Tel\u00e9fono"
+    },
+    "shipping_address": {
+      "type": "string",
+      "title": "Direcci\u00f3n de env\u00edo"
+    },
+    "shipping_city": {
+      "type": "string",
+      "title": "Ciudad"
+    },
+    "shipping_zip": {
+      "type": "string",
+      "title": "C\u00f3digo Postal"
+    },
+    "items": {
+      "type": "array",
+      "title": "Productos",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "price": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "total": {
+      "type": "number",
+      "title": "Total"
+    },
+    "status": {
+      "type": "string",
+      "title": "Estado",
+      "enum": [
+        "Pendiente",
+        "Procesando",
+        "Enviado",
+        "Entregado",
+        "Cancelado"
+      ],
+      "default": "Pendiente"
+    },
+    "payment_method": {
+      "type": "string",
+      "title": "M\u00e9todo de pago",
+      "enum": [
+        "PayPal",
+        "Tarjeta",
+        "Pendiente"
+      ]
+    },
+    "notes": {
+      "type": "string",
+      "title": "Notas"
+    }
+  },
+  "required": [
+    "customer_name",
+    "customer_email",
+    "total",
+    "status"
+  ]
+}

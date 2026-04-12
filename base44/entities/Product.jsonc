@@ -1,0 +1,72 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nombre"
+    },
+    "description": {
+      "type": "string",
+      "title": "Descripci\u00f3n"
+    },
+    "price": {
+      "type": "number",
+      "title": "Precio"
+    },
+    "category": {
+      "type": "string",
+      "title": "Categor\u00eda",
+      "enum": [
+        "Velas de soja artesanales",
+        "Velas ritualizadas",
+        "Wax Melts",
+        "Difusores",
+        "Jabones terap\u00e9uticos",
+        "Jabones ritualizados",
+        "Productos faciales",
+        "Productos labiales",
+        "Productos para el cabello",
+        "Productos terap\u00e9uticos",
+        "Concreterapia",
+        "Reiki a distancia",
+        "Productos para mascotas"
+      ]
+    },
+    "category_group": {
+      "type": "string",
+      "title": "Grupo",
+      "enum": [
+        "Velas & Aromas",
+        "Cuidado Personal",
+        "Bienestar & Terapia",
+        "Mascotas"
+      ]
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Imagen URL"
+    },
+    "in_stock": {
+      "type": "boolean",
+      "title": "En Stock",
+      "default": true
+    },
+    "featured": {
+      "type": "boolean",
+      "title": "Destacado",
+      "default": false
+    },
+    "stock_quantity": {
+      "type": "number",
+      "title": "Cantidad en inventario",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "price",
+    "category",
+    "category_group"
+  ]
+}

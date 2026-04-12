@@ -1,0 +1,74 @@
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import GoldenParticles from '../GoldenParticles';
+
+const LOGO_URL = "https://media.base44.com/images/public/user_68ef14c3265740cfbb073d99/48ddf0ec3_664978453_1742222426943109_7539000457263450418_n-removebg-preview.png";
+
+export default function HeroSection() {
+  return (
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden gradient-mystic">
+      <GoldenParticles />
+      
+      {/* Mystic background symbols */}
+      <div className="absolute inset-0 opacity-[0.03]" style={{
+        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Ctext x='30' y='35' text-anchor='middle' fill='%23c9a84c' font-size='20'%3E✦%3C/text%3E%3C/svg%3E")`,
+        backgroundSize: '80px 80px',
+      }} />
+
+      <div className="relative z-20 text-center px-4 py-20">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, ease: 'easeOut' }}
+        >
+          <img
+            src={LOGO_URL}
+            alt="Mímate by JMW"
+            className="w-48 sm:w-64 md:w-72 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(201,168,76,0.3)]"
+          />
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="font-script text-4xl sm:text-5xl md:text-6xl text-gold gold-text-glow mb-4"
+        >
+          Mímate by JMW
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          className="font-heading text-lg sm:text-xl md:text-2xl text-foreground/80 italic mb-10 max-w-lg mx-auto"
+        >
+          Tu ritual de bienestar comienza aquí
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4"
+        >
+          <Link
+            to="/tienda"
+            className="px-8 py-3 bg-gold text-mystic-900 font-heading text-sm uppercase tracking-widest rounded-full hover:shadow-[0_0_30px_rgba(201,168,76,0.4)] transition-all duration-500 hover:scale-105"
+          >
+            Ver Tienda
+          </Link>
+          <a
+            href="#nosotros"
+            className="px-8 py-3 border border-gold/50 text-gold font-heading text-sm uppercase tracking-widest rounded-full hover:bg-gold/10 transition-all duration-500"
+          >
+            Conoce Más
+          </a>
+        </motion.div>
+      </div>
+
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-20" />
+    </section>
+  );
+}
