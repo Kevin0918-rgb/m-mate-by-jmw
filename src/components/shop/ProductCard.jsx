@@ -38,11 +38,11 @@ export default function ProductCard({ product }) {
           </span>
           {product.category_group === 'Servicio' ? (
             <Link
-              to="/reiki"
+              to="/contacto"
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-gold/30 text-gold hover:bg-gold hover:text-mystic-900 transition-all duration-300 font-heading text-xs uppercase tracking-wider"
             >
               <Calendar className="w-3.5 h-3.5" />
-              Reservar
+              {product.name === 'Talleres Individuales' ? 'Reservar Taller' : 'Reservar'}
             </Link>
           ) : product.in_stock !== false ? (
             <button
