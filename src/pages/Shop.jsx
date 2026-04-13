@@ -9,8 +9,12 @@ const CATEGORY_GROUPS = [
   { key: 'all', label: 'Todos', icon: '✦' },
   { key: 'Productos Terapéuticos', label: 'Productos Terapéuticos', icon: '🧴' },
   { key: 'Productos Labiales', label: 'Productos Labiales', icon: '💄' },
-  { key: 'Jabones & Aromas', label: 'Jabones & Aromas', icon: '🧯' },
-  { key: 'Servicio', label: 'Servicio', icon: '✨' },
+  { key: 'Jabones Terapéuticos', label: 'Jabones Terapéuticos', icon: '🧼' },
+  { key: 'Jabones & Aromas', label: 'Jabones & Aromas', icon: '🕯️' },
+  { key: 'Mascotas', label: 'Mascotas', icon: '🐾' },
+  { key: 'Productos para el Cabello', label: 'Cabello', icon: '💇' },
+  { key: 'Productos Faciales', label: 'Facial', icon: '✨' },
+  { key: 'Servicio', label: 'Servicio', icon: '🌟' },
 ];
 
 export default function Shop() {
