@@ -14,16 +14,26 @@
       "type": "number",
       "title": "Precio"
     },
+    "price_label": {
+      "type": "string",
+      "title": "Precio (texto, ej: $8-10)"
+    },
     "category": {
       "type": "string",
       "title": "Categor\u00eda",
       "enum": [
         "Velas de soja artesanales",
+        "Velas arom\u00e1ticas",
         "Velas ritualizadas",
+        "Vela soya masaje",
         "Wax Melts",
         "Difusores",
+        "Aroma Beads",
+        "Room Spray",
         "Jabones terap\u00e9uticos",
         "Jabones ritualizados",
+        "Jab\u00f3n de glicerina",
+        "Scrub corporal",
         "Productos faciales",
         "Productos labiales",
         "Productos para el cabello",

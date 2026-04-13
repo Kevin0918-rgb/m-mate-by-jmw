@@ -32,7 +32,9 @@ export default function ProductCard({ product }) {
           <p className="font-body text-foreground/50 text-sm line-clamp-2 mb-3">{product.description}</p>
         )}
         <div className="flex items-center justify-between">
-          <span className="font-heading text-gold text-lg">${product.price?.toFixed(2)}</span>
+          <span className="font-heading text-gold text-lg">
+            {product.price_label || `$${product.price?.toFixed(2)}`}
+          </span>
           {product.in_stock !== false ? (
             <button
               onClick={handleAdd}

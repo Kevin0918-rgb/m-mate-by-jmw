@@ -10,15 +10,16 @@ import { Switch } from '@/components/ui/switch';
 import { useToast } from '@/components/ui/use-toast';
 
 const CATEGORIES = [
-  "Velas de soja artesanales", "Velas ritualizadas", "Wax Melts", "Difusores",
-  "Jabones terapéuticos", "Jabones ritualizados", "Productos faciales",
-  "Productos labiales", "Productos para el cabello", "Productos terapéuticos",
-  "Concreterapia", "Reiki a distancia", "Productos para mascotas"
+  "Velas de soja artesanales", "Velas aromáticas", "Velas ritualizadas", "Vela soya masaje",
+  "Wax Melts", "Difusores", "Aroma Beads", "Room Spray",
+  "Jabones terapéuticos", "Jabones ritualizados", "Jabón de glicerina", "Scrub corporal",
+  "Productos faciales", "Productos labiales", "Productos para el cabello",
+  "Productos terapéuticos", "Concreterapia", "Reiki a distancia", "Productos para mascotas"
 ];
 
 const GROUPS = ["Velas & Aromas", "Cuidado Personal", "Bienestar & Terapia", "Mascotas"];
 
-const emptyProduct = { name: '', description: '', price: 0, category: '', category_group: '', image_url: '', in_stock: true, featured: false, stock_quantity: 0 };
+const emptyProduct = { name: '', description: '', price: 0, price_label: '', category: '', category_group: '', image_url: '', in_stock: true, featured: false, stock_quantity: 0 };
 
 export default function AdminProducts() {
   const [products, setProducts] = useState([]);
@@ -50,6 +51,7 @@ export default function AdminProducts() {
       name: product.name || '',
       description: product.description || '',
       price: product.price || 0,
+      price_label: product.price_label || '',
       category: product.category || '',
       category_group: product.category_group || '',
       image_url: product.image_url || '',
@@ -118,7 +120,7 @@ export default function AdminProducts() {
                     <h3 className="font-heading text-foreground text-sm line-clamp-1">{p.name}</h3>
                     <p className="font-body text-foreground/40 text-xs">{p.category}</p>
                   </div>
-                  <span className="font-heading text-gold">${p.price?.toFixed(2)}</span>
+                  <span className="font-heading text-gold">{p.price_label || `$${p.price?.toFixed(2)}`}</span>
                 </div>
                 <div className="flex items-center gap-2 mt-3">
                   <span className={`text-xs font-heading px-2 py-0.5 rounded-full ${p.in_stock !== false ? 'bg-green-500/20 text-green-400' : 'bg-red-500/20 text-red-400'}`}>
@@ -143,7 +145,8 @@ export default function AdminProducts() {
           <div className="space-y-4">
             <Input placeholder="Nombre" value={form.name} onChange={update('name')} className="bg-muted/50 border-gold/20 font-body text-foreground" />
             <Textarea placeholder="Descripción" value={form.description} onChange={update('description')} rows={3} className="bg-muted/50 border-gold/20 font-body text-foreground resize-none" />
-            <Input type="number" placeholder="Precio" value={form.price} onChange={e => setForm({ ...form, price: parseFloat(e.target.value) || 0 })} step="0.01" className="bg-muted/50 border-gold/20 font-body text-foreground" />
+            <Input type="number" placeholder="Precio base" value={form.price} onChange={e => setForm({ ...form, price: parseFloat(e.target.value) || 0 })} step="0.01" className="bg-muted/50 border-gold/20 font-body text-foreground" />
+            <Input placeholder="Rango de precio (ej: $8-10)" value={form.price_label} onChange={update('price_label')} className="bg-muted/50 border-gold/20 font-body text-foreground" />
             <Select value={form.category} onValueChange={v => setForm({ ...form, category: v })}>
               <SelectTrigger className="bg-muted/50 border-gold/20 font-body text-foreground"><SelectValue placeholder="Categoría" /></SelectTrigger>
               <SelectContent className="bg-card border-gold/20">{CATEGORIES.map(c => <SelectItem key={c} value={c} className="font-body">{c}</SelectItem>)}</SelectContent>
