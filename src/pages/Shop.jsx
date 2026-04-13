@@ -7,18 +7,11 @@ import ProductCard from '../components/shop/ProductCard';
 
 const CATEGORY_GROUPS = [
   { key: 'all', label: 'Todos', icon: '✦' },
-  { key: 'Velas & Aromas', label: 'Velas & Aromas', icon: '🕯️' },
-  { key: 'Cuidado Personal', label: 'Cuidado Personal', icon: '🧴' },
-  { key: 'Bienestar & Terapia', label: 'Bienestar & Terapia', icon: '🪴' },
-  { key: 'Mascotas', label: 'Mascotas', icon: '🐾' },
+  { key: 'Productos Terapéuticos', label: 'Productos Terapéuticos', icon: '🧴' },
+  { key: 'Productos Labiales', label: 'Productos Labiales', icon: '💄' },
+  { key: 'Jabones & Aromas', label: 'Jabones & Aromas', icon: '🧯' },
+  { key: 'Servicio', label: 'Servicio', icon: '✨' },
 ];
-
-const SUBCATEGORIES = {
-  'Velas & Aromas': ['Velas de soja artesanales', 'Velas aromáticas', 'Velas ritualizadas', 'Vela soya masaje', 'Wax Melts', 'Difusores', 'Aroma Beads', 'Room Spray'],
-  'Cuidado Personal': ['Jabones terapéuticos', 'Jabones ritualizados', 'Jabón de glicerina', 'Scrub corporal', 'Productos faciales', 'Productos labiales', 'Productos para el cabello'],
-  'Bienestar & Terapia': ['Productos terapéuticos', 'Concreterapia', 'Reiki a distancia'],
-  'Mascotas': ['Productos para mascotas'],
-};
 
 export default function Shop() {
   const [products, setProducts] = useState([]);
@@ -104,34 +97,6 @@ export default function Shop() {
           ))}
         </div>
 
-        {/* Subcategory filters */}
-        {activeGroup !== 'all' && SUBCATEGORIES[activeGroup] && (
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            <button
-              onClick={() => setActiveCategory('all')}
-              className={`px-4 py-1.5 rounded-full font-body text-xs transition-all duration-300 ${
-                activeCategory === 'all'
-                  ? 'bg-gold/20 text-gold border border-gold/40'
-                  : 'border border-gold/10 text-foreground/40 hover:border-gold/30 hover:text-foreground/70'
-              }`}
-            >
-              Todos
-            </button>
-            {SUBCATEGORIES[activeGroup].map(sub => (
-              <button
-                key={sub}
-                onClick={() => setActiveCategory(sub)}
-                className={`px-4 py-1.5 rounded-full font-body text-xs transition-all duration-300 ${
-                  activeCategory === sub
-                    ? 'bg-gold/20 text-gold border border-gold/40'
-                    : 'border border-gold/10 text-foreground/40 hover:border-gold/30 hover:text-foreground/70'
-                }`}
-              >
-                {sub}
-              </button>
-            ))}
-          </div>
-        )}
 
         {loading ? (
           <div className="text-center py-20">
