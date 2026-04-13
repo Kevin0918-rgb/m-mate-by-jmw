@@ -11,6 +11,7 @@ const CATEGORY_GROUPS = [
   { key: 'Productos Labiales', label: 'Productos Labiales', icon: '💄' },
   { key: 'Jabones Terapéuticos', label: 'Jabones Terapéuticos', icon: '🧼' },
   { key: 'Jabones & Aromas', label: 'Jabones & Aromas', icon: '🧼' },
+  { key: 'Velas & Jabones Ritualizados', label: 'Ritualizados', icon: '🌙' },
   { key: 'Mascotas', label: 'Mascotas', icon: '🐾' },
   { key: 'Productos para el Cabello', label: 'Cabello', icon: '💇' },
   { key: 'Productos Faciales', label: 'Facial', icon: '🧴' },
@@ -102,11 +103,18 @@ export default function Shop() {
         </div>
 
 
-        {loading ? (
-          <div className="text-center py-20">
-            <div className="w-8 h-8 border-2 border-gold/30 border-t-gold rounded-full animate-spin mx-auto" />
+        {activeGroup === 'Velas & Jabones Ritualizados' && (
+          <div className="max-w-2xl mx-auto mb-8 text-center">
+            <div className="gradient-card border border-gold/20 rounded-2xl px-6 py-5">
+              <p className="font-script text-2xl text-gold mb-2">🌙 Hecho con intención</p>
+              <p className="font-body text-foreground/70 text-sm leading-relaxed">
+                Cada vela es elaborada artesanalmente con intención y energía en Puerto Rico 🇵🇷. Contáctanos para personalizar tu vela según tu intención.
+              </p>
+            </div>
           </div>
-        ) : filtered.length === 0 ? (
+        )}
+
+        {loading ? (
           <div className="text-center py-20">
             <p className="font-script text-3xl text-gold/40 mb-3">✦</p>
             <p className="font-body text-foreground/50">No se encontraron productos</p>
