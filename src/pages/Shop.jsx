@@ -13,10 +13,18 @@ const CATEGORY_GROUPS = [
   { key: 'Mascotas', label: 'Mascotas', icon: '🐾' },
 ];
 
+const SUBCATEGORIES = {
+  'Velas & Aromas': ['Velas de soja artesanales', 'Velas aromáticas', 'Velas ritualizadas', 'Vela soya masaje', 'Wax Melts', 'Difusores', 'Aroma Beads', 'Room Spray'],
+  'Cuidado Personal': ['Jabones terapéuticos', 'Jabones ritualizados', 'Jabón de glicerina', 'Scrub corporal', 'Productos faciales', 'Productos labiales', 'Productos para el cabello'],
+  'Bienestar & Terapia': ['Productos terapéuticos', 'Concreterapia', 'Reiki a distancia'],
+  'Mascotas': ['Productos para mascotas'],
+};
+
 export default function Shop() {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [activeGroup, setActiveGroup] = useState('all');
+  const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
 
   useEffect(() => {
@@ -24,6 +32,10 @@ export default function Shop() {
     const cat = params.get('cat');
     if (cat) setActiveGroup(cat);
   }, []);
+
+  useEffect(() => {
+    setActiveCategory('all');
+  }, [activeGroup]);
 
   useEffect(() => {
     async function load() {
@@ -40,11 +52,13 @@ export default function Shop() {
     load();
   }, [activeGroup]);
 
-  const filtered = products.filter(p =>
-    p.name?.toLowerCase().includes(search.toLowerCase()) ||
-    p.description?.toLowerCase().includes(search.toLowerCase()) ||
-    p.category?.toLowerCase().includes(search.toLowerCase())
-  );
+  const filtered = products.filter(p => {
+    const matchesSearch = p.name?.toLowerCase().includes(search.toLowerCase()) ||
+      p.description?.toLowerCase().includes(search.toLowerCase()) ||
+      p.category?.toLowerCase().includes(search.toLowerCase());
+    const matchesCategory = activeCategory === 'all' || p.category === activeCategory;
+    return matchesSearch && matchesCategory;
+  });
 
   return (
     <div className="pt-24 pb-16 px-4 min-h-screen">
@@ -72,8 +86,8 @@ export default function Shop() {
           />
         </div>
 
-        {/* Category filters */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Group filters */}
+        <div className="flex flex-wrap justify-center gap-3 mb-4">
           {CATEGORY_GROUPS.map(cat => (
             <button
               key={cat.key}
@@ -89,6 +103,35 @@ export default function Shop() {
             </button>
           ))}
         </div>
+
+        {/* Subcategory filters */}
+        {activeGroup !== 'all' && SUBCATEGORIES[activeGroup] && (
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            <button
+              onClick={() => setActiveCategory('all')}
+              className={`px-4 py-1.5 rounded-full font-body text-xs transition-all duration-300 ${
+                activeCategory === 'all'
+                  ? 'bg-gold/20 text-gold border border-gold/40'
+                  : 'border border-gold/10 text-foreground/40 hover:border-gold/30 hover:text-foreground/70'
+              }`}
+            >
+              Todos
+            </button>
+            {SUBCATEGORIES[activeGroup].map(sub => (
+              <button
+                key={sub}
+                onClick={() => setActiveCategory(sub)}
+                className={`px-4 py-1.5 rounded-full font-body text-xs transition-all duration-300 ${
+                  activeCategory === sub
+                    ? 'bg-gold/20 text-gold border border-gold/40'
+                    : 'border border-gold/10 text-foreground/40 hover:border-gold/30 hover:text-foreground/70'
+                }`}
+              >
+                {sub}
+              </button>
+            ))}
+          </div>
+        )}
 
         {loading ? (
           <div className="text-center py-20">
