@@ -23,7 +23,14 @@ export default function AdminLayout() {
     return <div className="fixed inset-0 flex items-center justify-center"><div className="w-8 h-8 border-4 border-gold/20 border-t-gold rounded-full animate-spin" /></div>;
   }
 
-  if (user && user.role !== 'admin') {
+  // Not logged in → redirect to login
+  if (!user) {
+    base44.auth.redirectToLogin(window.location.href);
+    return null;
+  }
+
+  // Logged in but not admin → go home
+  if (user.role !== 'admin') {
     return <Navigate to="/" replace />;
   }
 
