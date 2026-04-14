@@ -1,0 +1,33 @@
+{
+  "name": "ShippingOption",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Nombre"
+    },
+    "description": {
+      "type": "string",
+      "title": "Descripci\u00f3n"
+    },
+    "price": {
+      "type": "number",
+      "title": "Precio",
+      "default": 0
+    },
+    "active": {
+      "type": "boolean",
+      "title": "Activo",
+      "default": true
+    },
+    "sort_order": {
+      "type": "number",
+      "title": "Orden",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "price"
+  ]
+}

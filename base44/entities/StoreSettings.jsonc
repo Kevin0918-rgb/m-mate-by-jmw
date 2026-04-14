@@ -1,0 +1,54 @@
+{
+  "name": "StoreSettings",
+  "type": "object",
+  "properties": {
+    "business_name": {
+      "type": "string",
+      "title": "Nombre del negocio"
+    },
+    "description": {
+      "type": "string",
+      "title": "Descripci\u00f3n"
+    },
+    "logo_url": {
+      "type": "string",
+      "title": "Logo URL"
+    },
+    "email": {
+      "type": "string",
+      "title": "Email de contacto"
+    },
+    "phone": {
+      "type": "string",
+      "title": "Tel\u00e9fono"
+    },
+    "instagram": {
+      "type": "string",
+      "title": "Instagram"
+    },
+    "whatsapp": {
+      "type": "string",
+      "title": "WhatsApp"
+    },
+    "facebook": {
+      "type": "string",
+      "title": "Facebook"
+    },
+    "maintenance_mode": {
+      "type": "boolean",
+      "title": "Modo mantenimiento",
+      "default": false
+    },
+    "paypal_email": {
+      "type": "string",
+      "title": "PayPal Email"
+    },
+    "stripe_public_key": {
+      "type": "string",
+      "title": "Stripe Public Key"
+    }
+  },
+  "required": [
+    "business_name"
+  ]
+}

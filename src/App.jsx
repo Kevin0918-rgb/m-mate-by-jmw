@@ -15,10 +15,13 @@ import Contact from './pages/Contact';
 import AdminLayout from './pages/admin/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminProducts from './pages/admin/AdminProducts';
-import AdminOrders from './pages/admin/AdminOrders';
+import AdminOrders from './pages/admin/AdminOrders.jsx';
 import AdminMessages from './pages/admin/AdminMessages';
 import AdminTestimonials from './pages/admin/AdminTestimonials';
 import AdminReiki from './pages/admin/AdminReiki';
+import AdminClientes from './pages/admin/AdminClientes';
+import AdminEnvios from './pages/admin/AdminEnvios';
+import AdminConfiguracion from './pages/admin/AdminConfiguracion';
 
 const AuthenticatedApp = () => {
   const { isLoadingAuth, isLoadingPublicSettings, authError, navigateToLogin } = useAuth();
@@ -62,6 +65,9 @@ const AuthenticatedApp = () => {
         <Route path="/admin/mensajes" element={<AdminMessages />} />
         <Route path="/admin/testimonios" element={<AdminTestimonials />} />
         <Route path="/admin/reiki" element={<AdminReiki />} />
+        <Route path="/admin/clientes" element={<AdminClientes />} />
+        <Route path="/admin/envios" element={<AdminEnvios />} />
+        <Route path="/admin/configuracion" element={<AdminConfiguracion />} />
       </Route>
     </Routes>
   );
