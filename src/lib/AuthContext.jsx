@@ -37,14 +37,8 @@ export const AuthProvider = ({ children }) => {
         const publicSettings = await appClient.get(`/prod/public-settings/by-id/${appParams.appId}`);
         setAppPublicSettings(publicSettings);
         
-        // Check if user is authenticated (token from URL or localStorage)
-        const storedToken = localStorage.getItem('base44_access_token') || appParams.token;
-        if (storedToken) {
-          await checkUserAuth();
-        } else {
-          setIsLoadingAuth(false);
-          setIsAuthenticated(false);
-        }
+        // Always try to load the user — works for both logged-in and anonymous users
+        await checkUserAuth();
         setIsLoadingPublicSettings(false);
       } catch (appError) {
         console.error('App state check failed:', appError);
