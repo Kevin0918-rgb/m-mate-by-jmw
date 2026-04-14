@@ -16,10 +16,14 @@ const navItems = [
 ];
 
 export default function AdminLayout() {
-  const { user } = useAuth();
+  const { user, isLoadingAuth } = useAuth();
   const location = useLocation();
 
-  if (user?.role !== 'admin') {
+  if (isLoadingAuth) {
+    return <div className="fixed inset-0 flex items-center justify-center"><div className="w-8 h-8 border-4 border-gold/20 border-t-gold rounded-full animate-spin" /></div>;
+  }
+
+  if (user && user.role !== 'admin') {
     return <Navigate to="/" replace />;
   }
 
