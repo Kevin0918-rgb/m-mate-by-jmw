@@ -104,10 +104,25 @@ export default function Shop() {
 
 
         {activeGroup === 'Velas & Jabones Ritualizados' && (
-          <div className="max-w-2xl mx-auto mb-8 text-center">
-            <div className="gradient-card border border-gold/20 rounded-2xl px-6 py-5">
-              <p className="font-script text-2xl text-gold mb-2">🌙 Hecho con intención</p>
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="gradient-card border border-gold/20 rounded-2xl px-6 py-6 space-y-4">
+              <p className="font-script text-2xl text-gold text-center">🌙 Hecho con intención</p>
               <p className="font-body text-foreground/70 text-sm leading-relaxed">
+                Los jabones ritualizados no son simplemente productos de limpieza corporal. Son herramientas energéticas que combinan materia, intención y vibración.
+              </p>
+              <p className="font-body text-foreground/70 text-sm leading-relaxed">
+                Desde tiempos antiguos, las culturas han utilizado plantas, resinas, aceites y minerales para limpiar el cuerpo físico y el campo energético.
+              </p>
+              <div className="font-body text-foreground/70 text-sm leading-relaxed">
+                <p className="mb-1">Un jabón ritualizado funciona en tres niveles:</p>
+                <p>1. <span className="text-gold/80">Físico</span> — limpieza corporal</p>
+                <p>2. <span className="text-gold/80">Energético</span> — limpieza del aura</p>
+                <p>3. <span className="text-gold/80">Simbólico</span> — programación de intención</p>
+              </div>
+              <p className="font-body text-foreground/60 text-sm italic leading-relaxed border-t border-gold/10 pt-4">
+                El poder del jabón no está solo en sus ingredientes, sino en la intención que se coloca durante su elaboración.
+              </p>
+              <p className="font-body text-foreground/50 text-xs text-center">
                 Cada vela es elaborada artesanalmente con intención y energía en Puerto Rico 🇵🇷. Contáctanos para personalizar tu vela según tu intención.
               </p>
             </div>
