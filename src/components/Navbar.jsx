@@ -18,7 +18,7 @@ export default function Navbar() {
   const [cartCount, setCartCount] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
-  const { user } = useAuth();
+  const { user, isLoadingAuth } = useAuth();
 
   useEffect(() => {
     const updateCart = () => setCartCount(getCartCount());
