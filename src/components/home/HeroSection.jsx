@@ -23,7 +23,7 @@ export default function HeroSection() {
         backgroundSize: '80px 80px',
       }} />
 
-      <div className="relative z-20 text-center px-4 pt-40 pb-20">
+      <div className="relative z-20 text-center px-4 pt-24 sm:pt-40 pb-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
