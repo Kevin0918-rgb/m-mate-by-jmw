@@ -18,16 +18,20 @@ function formatPriceLabel(label) {
   return label;
 }
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, onOpenModal }) {
   const { toast } = useToast();
 
-  function handleAdd() {
+  function handleAdd(e) {
+    e.stopPropagation();
     addToCart(product);
     toast({ title: '¡Agregado!', description: `${product.name} se añadió al carrito.` });
   }
 
   return (
-    <div className="group gradient-card border border-gold/10 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(201,168,76,0.1)]">
+    <div
+      className="group gradient-card border border-gold/10 rounded-2xl overflow-hidden hover:border-gold/30 transition-all duration-500 hover:shadow-[0_0_30px_rgba(201,168,76,0.1)] cursor-pointer"
+      onClick={() => onOpenModal && onOpenModal(product)}
+    >
       <div className="aspect-square overflow-hidden bg-mystic-800/50">
         {product.image_url ? (
           <img
@@ -66,6 +70,7 @@ export default function ProductCard({ product }) {
             >
               <ShoppingCart className="w-4 h-4" />
             </button>
+
           ) : (
             <span className="text-xs text-foreground/40 font-heading uppercase">Agotado</span>
           )}

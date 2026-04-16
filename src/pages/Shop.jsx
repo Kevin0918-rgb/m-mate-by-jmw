@@ -4,6 +4,7 @@ import { Search } from 'lucide-react';
 import { base44 } from '@/api/base44Client';
 import { Input } from '@/components/ui/input';
 import ProductCard from '../components/shop/ProductCard';
+import ProductModal from '../components/shop/ProductModal';
 
 const CATEGORY_GROUPS = [
   { key: 'all', label: 'Todos', icon: '✦' },
@@ -24,6 +25,7 @@ export default function Shop() {
   const [activeGroup, setActiveGroup] = useState('all');
   const [activeCategory, setActiveCategory] = useState('all');
   const [search, setSearch] = useState('');
+  const [selectedProduct, setSelectedProduct] = useState(null);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -143,12 +145,14 @@ export default function Shop() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.05 }}
               >
-                <ProductCard product={product} />
+                <ProductCard product={product} onOpenModal={setSelectedProduct} />
               </motion.div>
             ))}
           </div>
         )}
       </div>
+
+      <ProductModal product={selectedProduct} onClose={() => setSelectedProduct(null)} />
     </div>
   );
 }
