@@ -8,11 +8,12 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Banner background image */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0" style={{ backgroundColor: '#2d0040' }}>
         <img
           src="https://media.base44.com/images/public/69db1a3a97e4e8f9ae073a7f/02c6ee91d_Luxuriouswellnessandbeautyshowcase.png"
           alt="Mímate by JMW"
-          className="w-full h-full object-cover object-center"
+          className="w-full h-full object-cover object-center-top md:object-cover md:object-center"
+          style={{ objectPosition: 'center top' }}
         />
         <div className="absolute inset-0 bg-black/30" />
       </div>
@@ -23,7 +24,7 @@ export default function HeroSection() {
         backgroundSize: '80px 80px',
       }} />
 
-      <div className="relative z-20 text-center px-4 pt-24 sm:pt-40 pb-20">
+      <div className="relative z-20 text-center px-4 pt-16 sm:pt-40 pb-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
