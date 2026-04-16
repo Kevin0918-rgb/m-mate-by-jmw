@@ -3,6 +3,21 @@ import { useToast } from '@/components/ui/use-toast';
 import { addToCart } from '../../lib/cartStore';
 import { Link } from 'react-router-dom';
 
+function formatPriceLabel(label) {
+  if (!label) return null;
+  // Detect patterns like "1oz $8.00 / 2oz $16.00" or "3oz — $7.00 / 6oz — $12.00"
+  const parts = label.split('/').map(s => s.trim());
+  if (parts.length === 2) {
+    // Extract size from first part (smallest), price from second part (highest)
+    const sizeMatch = parts[0].match(/^([\d.]+\s*oz)/i);
+    const priceMatch = parts[1].match(/\$[\d.]+/);
+    if (sizeMatch && priceMatch) {
+      return `${sizeMatch[1]} — ${priceMatch[0]}`;
+    }
+  }
+  return label;
+}
+
 export default function ProductCard({ product }) {
   const { toast } = useToast();
 
@@ -34,7 +49,7 @@ export default function ProductCard({ product }) {
         )}
         <div className="flex items-center justify-between">
           <span className="font-heading text-gold text-lg">
-            {product.price_label || `$${product.price?.toFixed(2)}`}
+            {formatPriceLabel(product.price_label) || `$${product.price?.toFixed(2)}`}
           </span>
           {product.category_group === 'Servicio' ? (
             <Link
