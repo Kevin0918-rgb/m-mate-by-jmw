@@ -9,10 +9,18 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Banner background image */}
       <div className="absolute inset-0 z-0" style={{ backgroundColor: '#2d0040' }}>
+        {/* Desktop image */}
         <img
           src="https://media.base44.com/images/public/69db1a3a97e4e8f9ae073a7f/02c6ee91d_Luxuriouswellnessandbeautyshowcase.png"
           alt="Mímate by JMW"
-          className="w-full h-full object-cover object-center-top md:object-cover md:object-center"
+          className="hidden md:block w-full h-full object-cover"
+          style={{ objectPosition: 'center top' }}
+        />
+        {/* Mobile image */}
+        <img
+          src="https://media.base44.com/images/public/69db1a3a97e4e8f9ae073a7f/93bb64a48_swkojygc.jpg"
+          alt="Mímate by JMW"
+          className="block md:hidden w-full h-full object-cover"
           style={{ objectPosition: 'center top' }}
         />
         <div className="absolute inset-0 bg-black/30" />
