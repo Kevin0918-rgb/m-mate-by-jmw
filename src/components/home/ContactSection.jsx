@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Send, Instagram, MessageCircle, Mail } from 'lucide-react';
+import { Send, Instagram, MessageCircle, Mail, Facebook } from 'lucide-react';
 
 const TikTokIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -121,6 +121,15 @@ export default function ContactSection() {
               <div>
                 <p className="font-heading text-foreground text-sm">TikTok</p>
                 <p className="font-body text-foreground/50 text-sm">@mimatebyjmw</p>
+              </div>
+            </a>
+            <a href="https://www.facebook.com/share/14Xus6Ygxub/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+                <Facebook className="w-5 h-5 text-gold" />
+              </div>
+              <div>
+                <p className="font-heading text-foreground text-sm">Facebook</p>
+                <p className="font-body text-foreground/50 text-sm">Mímate by JMW</p>
               </div>
             </a>
           </motion.div>

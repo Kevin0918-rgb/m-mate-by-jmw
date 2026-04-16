@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Instagram, MessageCircle, Mail, Heart } from 'lucide-react';
+import { Instagram, MessageCircle, Mail, Heart, Facebook } from 'lucide-react';
 
 const TikTokIcon = ({ className }) => (
   <svg className={className} viewBox="0 0 24 24" fill="currentColor">
@@ -61,6 +61,9 @@ export default function Footer() {
                 </a>
                 <a href="https://www.tiktok.com/@mimatebyjmw" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold/20 transition-colors">
                   <TikTokIcon className="w-4 h-4 text-gold" />
+                </a>
+                <a href="https://www.facebook.com/share/14Xus6Ygxub/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold/20 transition-colors">
+                  <Facebook className="w-4 h-4 text-gold" />
                 </a>
               </div>
               <Link to="/contacto" className="font-body text-foreground/60 hover:text-gold transition-colors text-sm">
