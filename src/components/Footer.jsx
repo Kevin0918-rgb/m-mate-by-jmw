@@ -53,7 +53,7 @@ export default function Footer() {
                 <a href="https://instagram.com/mimatebyjmw" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold/20 transition-colors">
                   <Instagram className="w-4 h-4 text-gold" />
                 </a>
-                <a href="https://wa.me/17875551234" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold/20 transition-colors">
+                <a href="https://wa.me/17875982136" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold/20 transition-colors">
                   <MessageCircle className="w-4 h-4 text-gold" />
                 </a>
                 <a href="mailto:info@mimatebyjmw.com" className="w-10 h-10 rounded-full border border-gold/30 flex items-center justify-center hover:bg-gold/20 transition-colors">

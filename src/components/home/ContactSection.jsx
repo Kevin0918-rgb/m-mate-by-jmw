@@ -96,7 +96,7 @@ export default function ContactSection() {
                 <p className="font-body text-foreground/50 text-sm">@mimatebyjmw</p>
               </div>
             </a>
-            <a href="https://wa.me/17875551234" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+            <a href="https://wa.me/17875982136" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
               <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
                 <MessageCircle className="w-5 h-5 text-gold" />
               </div>
