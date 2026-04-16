@@ -24,18 +24,6 @@ export default function HeroSection() {
       }} />
 
       <div className="relative z-20 text-center px-4 py-20">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2, ease: 'easeOut' }}
-        >
-          <img
-            src={LOGO_URL}
-            alt="Mímate by JMW"
-            className="w-48 sm:w-64 md:w-72 mx-auto mb-8 drop-shadow-[0_0_30px_rgba(201,168,76,0.3)]"
-          />
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
