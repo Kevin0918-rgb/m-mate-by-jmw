@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Send, Instagram, MessageCircle, Mail } from 'lucide-react';
+
+const TikTokIcon = ({ className }) => (
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.16 8.16 0 0 0 4.77 1.52V6.76a4.85 4.85 0 0 1-1-.07z"/>
+  </svg>
+);
 import { base44 } from '@/api/base44Client';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -106,6 +112,15 @@ export default function ContactSection() {
               <div>
                 <p className="font-heading text-foreground text-sm">Email</p>
                 <p className="font-body text-foreground/50 text-sm">info@mimatebyjmw.com</p>
+              </div>
+            </a>
+            <a href="https://www.tiktok.com/@mimatebyjmw" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
+              <div className="w-12 h-12 rounded-full border border-gold/30 flex items-center justify-center group-hover:bg-gold/10 transition-colors">
+                <TikTokIcon className="w-5 h-5 text-gold" />
+              </div>
+              <div>
+                <p className="font-heading text-foreground text-sm">TikTok</p>
+                <p className="font-body text-foreground/50 text-sm">@mimatebyjmw</p>
               </div>
             </a>
           </motion.div>
